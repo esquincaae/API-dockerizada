@@ -4,7 +4,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 33060;
+const port = 3001;
 
 const db = mysql.createConnection({
     host: '127.0.0.1',
@@ -17,7 +17,7 @@ const db = mysql.createConnection({
 db.connect(err => {
   if (err) throw err;
   console.log('Conectado a la base de datos');
-
+/*
   const createTableQuery = `
       CREATE TABLE IF NOT EXISTS users (
           id INT AUTO_INCREMENT PRIMARY KEY,
@@ -29,7 +29,7 @@ db.connect(err => {
   db.query(createTableQuery, (err, result) => {
       if (err) throw err;
       console.log("Tabla 'users' creada o ya existente");
-  });
+  });*/
 });
 
 app.use(cors());
